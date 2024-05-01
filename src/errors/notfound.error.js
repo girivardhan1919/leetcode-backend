@@ -3,11 +3,13 @@ const { StatusCodes } = require('http-status-codes');
 
 class NotFound extends BaseError {
   constructor(resourceName, resourceValue) {
+    console.log(resourceName);
     super("NotFound", StatusCodes.NOT_FOUND, `The requested resource: ${resourceName} with value ${resourceValue} not found`, {
       resourceName,
       resourceValue
     });
   }
+
 }
 
 module.exports = NotFound;
